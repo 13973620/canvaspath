@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>{{ user.get_role_display }} panel, Hi {{ user.first_name }} </h2>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Your Course
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="stu_course" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Couser id</th>
+                        <th>course name</th>
+                        <th>Course dec</th>
+                        <th>Prof name</th>
+                        <th>Prof email</th>
+                        <th>Prof office</th>
+                        <th>Sections No</th>
+                        <th>Sections Type</th>
+                        <th>Course grade</th>
+                        {#                        <th>Sections limit</th>#}
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    {% for course in courses %}
+                        <tr>
+                            <td><span class="text-info">{{ course.course_id }}</span></td>
+                            <td><span class="text-info">{{ course.course_name }}</span></td>
+                            <td><span class="text-info">{{ course.course_description }}</span></td>
+                            <td><span class="text-info">{{ course.course_prof.first_name }}</span></td>
+                            <td><span class="text-info">{{ course.course_prof.email }}</span></td>
+                            <td><span class="text-info">{{ course.course_prof.office_address }}</span></td>
+                            <td><span class="text-info">{{ course.section.sec_no }}</span></td>
+                            <td><span class="text-info">{{ course.section.section_type }}</span></td>
+                            <!-- custom template filter in users.view -->
+                            <td><span class="text-info">{{ gl|get_item:course.course_id }}</span></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Your Homework
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="course-table" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Course id</th>
+                        <th>HomeWork details</th>
+                        <th>student</th>
+                        <th>Prof email</th>
+                        <th>Grade</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    {% for hw in hws %}
+                        <tr>
+                            <td><span class="text-info">{{ hw.course_id }}</span></td>
+                            <td><span class="text-info">{{ hw.hw_details }}</span></td>
+                            <td><span class="text-info">{{ hw.student_email }}</span></td>
+                            <td><span class="text-info">{{ hw.course_id.course_prof.email }}</span></td>
+                            <td><span class="text-info">{{ hw.grade }}</span></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

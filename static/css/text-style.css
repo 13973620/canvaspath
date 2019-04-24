@@ -1,0 +1,82 @@
+.box {
+    font-size: 16px;
+    color: #4cc134;
+    margin: 8px;
+    animation: changeshadow 1s ease-in infinite;
+    /* compatible */
+    -webkit-animation: changeshadow 1s linear infinite;
+    -moz-animation: changeshadow 1s linear infinite;
+    -ms-animation: changeshadow 1s linear infinite;
+    -o-animation: changeshadow 1s linear infinite;
+}
+
+@keyframes changeshadow {
+    0% {
+        text-shadow: 0 0 4px #4cc134
+    }
+    50% {
+        text-shadow: 0 0 40px #4cc134
+    }
+    100% {
+        text-shadow: 0 0 4px #4cc134
+    }
+}
+
+/* compatible prefix */
+@-webkit-keyframes changeshadow {
+    0% {
+        text-shadow: 0 0 4px #4cc134
+    }
+    50% {
+        text-shadow: 0 0 40px #4cc134
+    }
+    100% {
+        text-shadow: 0 0 4px #4cc134
+    }
+}
+
+@-moz-keyframes changeshadow {
+    0% {
+        text-shadow: 0 0 4px #4cc134
+    }
+    50% {
+        text-shadow: 0 0 40px #4cc134
+    }
+    100% {
+        text-shadow: 0 0 4px #4cc134
+    }
+}
+
+@-ms-keyframes changeshadow {
+    0% {
+        text-shadow: 0 0 4px #4cc134
+    }
+    50% {
+        text-shadow: 0 0 40px #4cc134
+    }
+    100% {
+        text-shadow: 0 0 4px #4cc134
+    }
+}
+
+@-o-keyframes changeshadow {
+    0% {
+        text-shadow: 0 0 4px #4cc134
+    }
+    50% {
+        text-shadow: 0 0 40px #4cc134
+    }
+    100% {
+        text-shadow: 0 0 4px #4cc134
+    }
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+.circle {
+    fill: steelblue;
+}
